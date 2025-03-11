@@ -4,7 +4,7 @@
 cadena1 = input('Ingrese una palabra: ')
 cadena2 = input('Ingrese otra palabra: ')
 print('La palabra mas larga es: ', end='')
-if(cadena1>cadena2):
+if(len(cadena1)>len(cadena2)):
     print(cadena1)
 else:
     print(cadena2)
