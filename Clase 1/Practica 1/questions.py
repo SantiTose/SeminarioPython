@@ -29,7 +29,8 @@ correct_answers_index = [1, 2, 0, 3, 1]
 3.
 # El usuario deberá contestar 3 preguntas
 
-exit_status =0
+puntaje = 0.0
+exit_status = 0
 for _ in range(3):
     if(exit_status!= 0):
         break
@@ -47,11 +48,13 @@ for _ in range(3):
             # Se verifica si la respuesta es correcta
             if user_answer == correct_answers_index[question_index]:
                 print("¡Correcto!")
+                puntaje+=1
                 break
             elif user_answer >=0 and user_answer <=3:
                 if intento == 0:
                     print('Incorrecto, Te queda 1 intento restante ')
                     print('Escribe nuevamente tu respuesta ')
+                    puntaje-=0.5
                     continue
                 # Si el usuario no responde correctamente después de 2 intentos,
                 # se muestra la respuesta correcta
@@ -60,6 +63,7 @@ for _ in range(3):
                 [correct_answers_index[question_index]])
                 # Se imprime un blanco al final de la pregunta
                 print()
+                puntaje -=0.5
                 break
             else:
                 print('Respuesta invalida! ')
@@ -69,6 +73,7 @@ for _ in range(3):
             print('Respuesta invalida')
             exit_status = 1
             break
+print(f'Puntaje final: {puntaje}')
          
     
             
