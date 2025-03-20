@@ -22,33 +22,29 @@ answers = [
 ]
 # Índice de la respuesta correcta para cada pregunta, el el mismo orden que las preguntas
 correct_answers_index = [1, 2, 0, 3, 1]
-6.
-7.
-1.
-2.
-3.
 # El usuario deberá contestar 3 preguntas
 
+questions_to_ask = random.choices(list(zip(questions,answers,correct_answers_index)),k=3)
 puntaje = 0.0
 exit_status = 0
 for _ in range(3):
     if(exit_status!= 0):
         break
     # Se selecciona una pregunta aleatoria
-    question_index = random.randint(0, len(questions) - 1)
     # Se muestra la pregunta y las respuestas posibles
-    print(questions[question_index])
-    for i, answer in enumerate(answers[question_index]):
-        print(f"{i + 1}. {answer}")
+    print(questions_to_ask[_][0])
+    for i, answer in enumerate(questions_to_ask[_][1]):
+        print(f"{i + 1}. {questions_to_ask[_][1][i]}")
         # El usuario tiene 2 intentos para responder correctamente
     for intento in range(2):
         user_answer = (input("Respuesta: ")) # Verifico si la respuesta solo contiene digitos, de lo contrario termino el bucle
         if user_answer.isdigit() == True:
             user_answer= int(user_answer)-1
             # Se verifica si la respuesta es correcta
-            if user_answer == correct_answers_index[question_index]:
+            if user_answer == questions_to_ask[_][2]:
                 print("¡Correcto!")
                 puntaje+=1
+                print('') # Espacio vacio al final de la respuesta
                 break
             elif user_answer >=0 and user_answer <=3:
                 if intento == 0:
@@ -59,8 +55,7 @@ for _ in range(3):
                 # Si el usuario no responde correctamente después de 2 intentos,
                 # se muestra la respuesta correcta
                 print("Incorrecto. La respuesta correcta es:")
-                print(answers[question_index]
-                [correct_answers_index[question_index]])
+                print(f"{questions_to_ask[_][2]+1}. {questions_to_ask[_][1][questions_to_ask[_][2]]}")
                 # Se imprime un blanco al final de la pregunta
                 print()
                 puntaje -=0.5
@@ -73,6 +68,7 @@ for _ in range(3):
             print('Respuesta invalida')
             exit_status = 1
             break
+print('Juego terminado. ')
 print(f'Puntaje final: {puntaje}')
          
     
