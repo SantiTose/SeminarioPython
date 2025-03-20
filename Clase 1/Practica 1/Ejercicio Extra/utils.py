@@ -11,3 +11,9 @@ def eliminarProducto(inventario = dict):
     else:
         print('No existe esa clave. Ingresa una clave valida! ')
     print('')
+
+def mostrarInventario(inventario = dict):
+    for elem in inventario:
+        val = inventario[elem]
+        print(f'Producto: "{elem}" Cantidad: "{val}"' )
+    print('')
