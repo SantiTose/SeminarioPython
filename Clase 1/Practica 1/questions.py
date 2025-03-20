@@ -24,7 +24,8 @@ answers = [
 correct_answers_index = [1, 2, 0, 3, 1]
 # El usuario deberá contestar 3 preguntas
 
-questions_to_ask = random.choices(list(zip(questions,answers,correct_answers_index)),k=3)
+questions_to_ask = random.sample(list(zip(questions,answers,correct_answers_index)),k=3)
+# La funcion sample funciona de la misma manera que la choices pero impide que se repitan elementos
 puntaje = 0.0
 exit_status = 0
 for _ in range(3):
