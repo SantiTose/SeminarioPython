@@ -1,0 +1,3 @@
+import Sting;
+
+total = sum*
