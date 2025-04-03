@@ -18,7 +18,8 @@ Descarga Visual Studio Code: https://code.visualstudio.com/Download
 Abri el programa y aceptar todo
 
 ### Entrar en la parte de extensiones y descargar las siguientes: 
-![alt text](image-1.png) Buscar la parte de extensiones y en la lupa escribir los siguientes nombres(o usar los links)
+![alt text](image-1.png)
+Buscar la parte de extensiones y en la lupa escribir los siguientes nombres(o usar los links)
 Pylance https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance
 Jupyter https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter
 Python https://marketplace.visualstudio.com/items?itemName=ms-python.python
